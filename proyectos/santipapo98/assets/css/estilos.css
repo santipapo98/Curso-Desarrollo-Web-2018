@@ -1,0 +1,149 @@
+
+/* Importar fuente personalizada*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/*Normalizar Documentos*/ 
+*{
+    margin: 0; padding:0; box-sizing: border-box; 
+}
+
+body{
+    font-family: 'lato','Arial',sans-serif;
+}
+
+/* Utilidad: Normalizar listas y Links*/
+.lista-links{
+    list-style: none;
+    margin:0;
+    padding:o;
+}
+.lista-links li a{
+    text-decoration: none;
+}
+
+.header{
+    background: var(--c-claro);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.main{
+    background: var(--c-primario);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.main {
+    padding:1em;
+}
+
+.main .instruccion {
+    background: var(--c-oscuro);
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.main .instruccion p{
+
+margin: 0; padding:0;
+text-align: center;
+font-weight: bold;
+
+}
+
+.main .contenedor-iframe{
+    width: 90%;
+    margin: 0 auto;
+    background: var(--c-claro);
+    text-align: center;
+    margin-top: 0.5em;
+    overflow:auto;
+    
+}
+
+/*Estilos para la barra de navegacion*/
+
+.nav *{
+    color:var(--c-oscuro);
+}
+
+.nav .nav-links li {
+    text-align: center;
+    margin:0 auto;
+    transition:  0.5ms;
+}
+
+.nav .nav-links li:hover{
+    background-color: var(--c-secundario);
+}
+
+
+.nav .menu-open{
+    display: inline-block; 
+    margin: 5px auto 5px 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nav{
+    position: relative;
+}
+
+.nav .nav-toggle{
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+
+.main .contenedor-iframe iframe{
+    
+    width: var(--iframe-width);
+    height: var(--iframe-height);
+}
+
+.menu{
+    background: var(--c-secundario);
+    display:none;
+
+}
+
+.footer{
+    background: var(--c-terciario);
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+
+
+/* Definicion de CSS variables*/
+:root{
+    /* Definicion de colores*/
+    --c-primario:#2C3E50;
+    --c-secundario:#E74C3C;
+    --c-terciario:#2980B9;
+    --c-claro:#ECF0F1;
+    --c-oscuro:#3498DB;  
+    
+    /* Dimension del iframe*/
+    --iframe-width:650px;
+    --iframe-height:450px;
+}
+
+
+
+/*============> Layout de la aplicacion con CSS Grid<=============*/
+.contenedor{
+    background: var(--c-primario);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 50px ;
+    overflow-x: hidden;
+}
